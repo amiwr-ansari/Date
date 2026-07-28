@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date Request</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 35px 25px;
+      border-radius: 24px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 85%;
+      max-width: 320px;
+    }
+    .emoji { font-size: 50px; margin-bottom: 10px; }
+    h2 { color: #d81b60; margin: 10px 0; font-size: 22px; }
+    p { color: #666; font-size: 14px; line-height: 1.5; margin-bottom: 25px; }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      align-items: center;
+      min-height: 50px;
+    }
+    button {
+      padding: 12px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+    .btn-yes {
+      background-color: #ec407a;
+      color: white;
+      box-shadow: 0 4px 15px rgba(236, 64, 122, 0.4);
+    }
+    .btn-no {
+      background-color: #e0e0e0;
+      color: #555;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="emoji">🥺</div>
+  <h2>با من میای سر قرار؟</h2>
+  <p>فقط یه سوال ساده‌ست... جواب درست هم فقط یکیشه 😏</p>
+  
+  <div class="btn-container">
+    <button class="btn-yes" onclick="alert('یااای! پس منتظرتم ❤️')">آره 💕</button>
+    <button class="btn-no" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">نه</button>
+  </div>
+</div>
+
+<script>
+  function moveButton() {
+    const btn = document.getElementById('noBtn');
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    btn.style.position = 'fixed';
+    btn.style.left = x + 'px';
+    btn.style.top = y + 'px';
+  }
+</script>
+
+</body>
+</html>
